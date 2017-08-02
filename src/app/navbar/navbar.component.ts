@@ -10,10 +10,17 @@ import * as firebase from 'firebase/app';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  user: Observable<firebase.User>;
+  title: string;
 
-  constructor() { }
+  constructor(private authService: AuthenticationService,
+              private router: Router) { }
 
   ngOnInit() {
+    this.user = this.authService.authUser();
   }
 
+  logOut() {
+    this.authService.logout().then(resolve=> this.router.navigate['/']);
+  }
 }
