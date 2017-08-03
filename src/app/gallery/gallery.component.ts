@@ -1,7 +1,8 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { ImageService } from '../services/image.service';
 import { GalleryImage } from '../models/galleryImage.model';
-import { Observable } from 'rxjs/Observable'
+import { Observable } from 'rxjs/Observable';
+
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
